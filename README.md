@@ -56,12 +56,3 @@ uvicorn main:app --host 0.0.0.0 --port $PORT
 SQLite database file: `campaigns.db`
 
 Make sure the database file is included/deployed properly or setup migrations for production.
-
-## License
-
-This project is licensed under the MIT License.
-```
-
-***
-
-To download, copy each content into a plain text file named `README.md` in your respective frontend and backend project folders. If you want, I can generate those as uploadable files. Just ask!
