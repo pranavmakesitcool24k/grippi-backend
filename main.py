@@ -6,7 +6,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For testing/demo purposes
+    allow_origins=["*"],  # For demo; in production restrict this
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -16,6 +16,10 @@ def get_db_connection():
     conn = sqlite3.connect('campaigns.db')
     conn.row_factory = sqlite3.Row
     return conn
+
+@app.get("/")
+def root():
+    return {"message": "Backend API is running"}
 
 @app.get("/campaigns")
 def read_campaigns(status: str = None):
